@@ -1,16 +1,17 @@
-package az.turingacademy.test;
+package az.turingacademy.tests;
 
 import az.turingacademy.springhotelbookingapp.domain.entity.Flight;
 import az.turingacademy.springhotelbookingapp.service.FlightService;
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.junit.Test;
+
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.hibernate.validator.internal.util.Contracts.assertNotNull;
+import static org.junit.Assert.assertEquals;
+
 
 @SpringBootTest
 public class FlightServiceTest {
@@ -35,7 +36,7 @@ public class FlightServiceTest {
 
     @Test
     public void testGetAllFlights() {
-        List flights = flightService.getAllFlights();
+        List<Flight> flights = flightService.getAllFlights();
         assertNotNull(flights);
     }
 }
