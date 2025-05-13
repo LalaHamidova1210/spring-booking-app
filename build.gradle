@@ -24,12 +24,16 @@ dependencies {
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.1.0'
     implementation 'org.mapstruct:mapstruct:' + mapstructVersion
     implementation 'org.springframework.boot:spring-boot-starter'
-    compileOnly 'org.projectlombok:lombok:1.18.30'  // versiya son ola bilər
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
+    compileOnly 'org.projectlombok:lombok:1.18.30'
     annotationProcessor 'org.projectlombok:lombok:1.18.30'
     annotationProcessor 'org.mapstruct:mapstruct-processor:' + mapstructVersion
     runtimeOnly 'com.h2database:h2'
     implementation 'org.liquibase:liquibase-core'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+test {
+    useJUnitPlatform()
 }
 
 tasks.withType(JavaCompile) {
