@@ -20,4 +20,7 @@ public class Flight {
     private String destination;
     private int availableSeats;
     private LocalDateTime timestamp;
+
+    public static Object builder() {
+    }
 }
